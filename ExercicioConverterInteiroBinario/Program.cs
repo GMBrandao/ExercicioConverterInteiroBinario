@@ -1,4 +1,4 @@
-﻿int dec, count;
+﻿int dec, count = 0;
 int[] bin = new int[8];
 bool valida = true;
 
@@ -11,7 +11,7 @@ while (valida)
     }
     else
     {
-        if (dec > 0 && dec < 255)
+        if (dec > 0 && dec < 256)
         {
             fazBinario(dec);
             imprimeBinario();
@@ -35,10 +35,15 @@ void imprimeBinario()
 
 int[] fazBinario(int aux)
 {
-    for (count = 0; count < bin.Length; count++)
+    if (aux != 0)
     {
-        bin[count] = aux % 2;
+        bin[count++] = aux % 2;
         aux /= 2;
+
+        return fazBinario(aux);
     }
-    return bin;
+    else
+    {
+        return bin;
+    }
 }
