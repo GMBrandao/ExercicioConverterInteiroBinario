@@ -11,7 +11,7 @@ while (valida)
     }
     else
     {
-        if (dec > 0 && dec < 256)
+        if (dec > -1 && dec < 256)
         {
             fazBinario(dec);
             imprimeBinario();
